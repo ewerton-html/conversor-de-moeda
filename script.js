@@ -12,9 +12,9 @@ function bitcoin() {
 
 function criarConvercao(tipoConversor) {
   var localConvercao = document.getElementById("localConvercao");
-  var campo = "<input type='number' id='valor' size='2' /><br>";
+  var campo = "<input type='number' class='campo' id='valor' size='2' /><br>";
   var botao =
-    "<input type='submit' onclick='" + tipoConversor + "' value='Converter' />";
+    "<input type='submit' id='btmVerificar' onclick='" + tipoConversor + "' value='Converter' />";
   localConvercao.innerHTML = campo + botao;
   console.log(localConvercao);
 }
@@ -36,7 +36,7 @@ function conversorDolar() {
   var pegandoValor = document.getElementById("valor").value;
   var convertendoValor = pegandoValor * 5.34;
   convertendoValor = parseInt(convertendoValor);
-  var mostrandoValor = "O valor é R$:" + convertendoValor;
+  var mostrandoValor = "<div id='valorConvertido'><h2> O valor é R$:" + convertendoValor +"</h2>";
   localValor.innerHTML = mostrandoValor;
 }
 
@@ -45,14 +45,14 @@ function conversorEuro() {
   var pegandoValor = document.getElementById("valor").value;
   var convertendoValor = pegandoValor * 6.25;
   convertendoValor = parseInt(convertendoValor);
-  var mostrandoValor = "O valor é R$:" + convertendoValor;
-  localValor.innerHTML = mostrandoValor;
+  var mostrandoValor = "<div id='valorConvertido'><h2> O valor é R$:" + convertendoValor +"</h2>";
+  localValor.innerHTML = localValor.innerHTML + mostrandoValor;
 }
 
 function conversorBitCoin() {
   var localValor = document.getElementById("valorConvertido");
   var pegandoValor = document.getElementById("valor").value;
   var convertendoValor = pegandoValor * 233169.03;
-  var mostrandoValor = "O valor é R$:" + convertendoValor;
-  localValor.innerHTML = mostrandoValor;
+  var mostrandoValor = "<div id='valorConvertido'><h2> O valor é R$:" + convertendoValor +"</h2>";
+  localValor.innerHTML = localValor.innerHTML + mostrandoValor;
 }
